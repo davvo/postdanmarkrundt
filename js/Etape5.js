@@ -8,12 +8,14 @@ define(function (require) {
 
 		start: {
 			coordinates: [11.7160177230835, 55.7168860477575],
-			popupContent: "Start Etape 5"
+			popupContent: "Start Etape 5",
+			iconUrl: 'img/start-5.png'
 		},
 
 		stop: {
 			coordinates: [11.71284, 55.71754],
-			popupContent: "Mål Etape 5"
+			popupContent: "Mål Etape 5",
+			iconUrl: 'img/finish.png'
 		},
 
 		track: {

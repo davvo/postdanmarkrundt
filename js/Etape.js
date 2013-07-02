@@ -4,30 +4,14 @@ define(function (require) {
 
 	"use strict";
 
+	var MarkerIcon = require('./MarkerIcon');
+
 	function toLineString(coords) {
 		return coords.split(' ').map(function (coord) {
 			var lnglat = coord.split(',');
 			return [parseFloat(lnglat[0]), parseFloat(lnglat[1])];
 		});
 	}
-
-	var StartIcon = L.Icon.extend({
-	    options: {
-			iconUrl: 'img/dd-start.png',
-			iconSize:     [20, 34],
-			iconAnchor:   [10, 34],
-			popupAnchor:  [0, -40]
-	    }
-	});
-
-	var StopIcon = L.Icon.extend({
-	    options: {
-			iconUrl: 'img/dd-end.png',
-			iconSize:     [20, 34],
-			iconAnchor:   [10, 34],
-			popupAnchor:  [0, -40]
-	    }
-	});
 
 	return L.GeoJSON.extend({
 
@@ -39,10 +23,11 @@ define(function (require) {
 				'type': 'Feature',
 				'properties': {
 					'popupContent': this.start.popupContent,
-					'type': 'start'
+					'iconUrl': this.start.iconUrl
 				},
 				'geometry': {
 					'type': 'Point',
+					'iconUrl': this.start.iconUrl,
 					'coordinates': this.start.coordinates
 				}
 			});
@@ -51,7 +36,7 @@ define(function (require) {
 				'type': 'Feature',
 				'properties': {
 					'popupContent': this.stop.popupContent,
-					'type': 'stop'
+					'iconUrl': this.stop.iconUrl
 				},
 				'geometry': {
 					'type': 'Point',
@@ -94,13 +79,11 @@ define(function (require) {
 					layer.bindPopup(content.join(''));
 				},
 				pointToLayer: function (feature, latlng) {
-					var options = {};
-					if (feature.properties.type === 'start') {
-						options.icon = new StartIcon(latlng);
-					} else if (feature.properties.type === 'stop') {
-						options.icon = new StopIcon(latlng);
-			        }
-			        return L.marker(latlng, options);
+					return L.marker(latlng, {
+						icon: new MarkerIcon({
+							iconUrl: feature.properties.iconUrl
+						})
+					});
 			    }
 			};
 

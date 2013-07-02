@@ -1,29 +1,31 @@
-/*global L */
+/*global define, L */
 
 define(function (require) {
+
+	"use strict";
 
 	function toLineString(coords) {
 		return coords.split(' ').map(function (coord) {
 			var lnglat = coord.split(',');
 			return [parseFloat(lnglat[0]), parseFloat(lnglat[1])];
-		});		
+		});
 	}
 
 	var StartIcon = L.Icon.extend({
 	    options: {
-	    	iconUrl: 'img/dd-start.png',
-	        iconSize:     [20, 34],
-	        iconAnchor:   [10, 34],
-	        popupAnchor:  [0, -40]
+			iconUrl: 'img/dd-start.png',
+			iconSize:     [20, 34],
+			iconAnchor:   [10, 34],
+			popupAnchor:  [0, -40]
 	    }
 	});
 
 	var StopIcon = L.Icon.extend({
 	    options: {
-	    	iconUrl: 'img/dd-end.png',
-	        iconSize:     [20, 34],
-	        iconAnchor:   [10, 34],
-	        popupAnchor:  [0, -40]
+			iconUrl: 'img/dd-end.png',
+			iconSize:     [20, 34],
+			iconAnchor:   [10, 34],
+			popupAnchor:  [0, -40]
 	    }
 	});
 
@@ -78,7 +80,7 @@ define(function (require) {
 						'type': 'LineString',
 						'coordinates': toLineString(this.circuit.coordinates)
 					}
-				});				
+				});
 			}
 
 			var self = this;
@@ -94,12 +96,12 @@ define(function (require) {
 				pointToLayer: function (feature, latlng) {
 					var options = {};
 					if (feature.properties.type === 'start') {
-						options.icon = new StartIcon(latlng)
+						options.icon = new StartIcon(latlng);
 					} else if (feature.properties.type === 'stop') {
-						options.icon = new StopIcon(latlng)
+						options.icon = new StopIcon(latlng);
 			        }
 			        return L.marker(latlng, options);
-			    }				
+			    }
 			};
 
 

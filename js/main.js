@@ -1,4 +1,8 @@
+/*global define, L */
+
 define(function (require) {
+
+    "use strict";
 
 	require('lib/domReady');
 	require('lib/ddr-ecma5');
@@ -17,7 +21,7 @@ define(function (require) {
     var url = 'http://{s}.eniro.no/geowebcache/service/tms1.0.0/{layer}/{z}/{x}/{y}.{ext}';
     var options = {
         subdomains: ['map01', 'map02', 'map03', 'map04'],
-        tms: true                    
+        tms: true
     };
 
     var mapLayer = L.tileLayer(url, L.Util.extend({
@@ -36,14 +40,14 @@ define(function (require) {
         'Kort': mapLayer,
         'Luftfoto': aerialLayer
     }, {
-    	"1. etape, Silkeborg-Varde, 180 km": new Etape1(),
-    	"2. etape, Ribe–Sønderborg, 180 km": new Etape2(),
-    	"3. etape, Sønderborg–Vejle, 200 km": new Etape3(),
-    	"4. etape, Høng–Asnæs Indelukke, 105 km": new Etape4(),
-    	"5. etape, Holbæk, 12,1 km enkeltstart": new Etape5(),
-    	"6. etape, Roskilde–Frederiksberg, 165 km": new Etape6()
+        "1. etape, Silkeborg-Varde, 180 km": new Etape1(),
+        "2. etape, Ribe–Sønderborg, 180 km": new Etape2(),
+        "3. etape, Sønderborg–Vejle, 200 km": new Etape3(),
+        "4. etape, Høng–Asnæs Indelukke, 105 km": new Etape4(),
+        "5. etape, Holbæk, 12,1 km enkeltstart": new Etape5(),
+        "6. etape, Roskilde–Frederiksberg, 165 km": new Etape6()
     }, {
-    	collapsed: false
+        collapsed: false
     }).addTo(map);
 
     mapLayer.addTo(map);

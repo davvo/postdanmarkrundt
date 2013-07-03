@@ -1,4 +1,12 @@
-/*global define, L */
+/*global requirejs, define, L */
+
+requirejs.config({
+    shim: {
+        'lib/jquery': {
+            exports: '$'
+        }
+    }
+});
 
 define(function (require) {
 
@@ -12,7 +20,9 @@ define(function (require) {
 		Etape3 = require('Etape3'),
 		Etape4 = require('Etape4'),
 		Etape5 = require('Etape5'),
-		Etape6 = require('Etape6');
+		Etape6 = require('Etape6'),
+
+        $ = require('lib/jquery');
 
 	var map = L.map('map', {
 		attributionControl: false,
@@ -41,24 +51,49 @@ define(function (require) {
         maxZoom: 20
     }, options));
 
-    var baseLayers = {
-        'Kort': mapLayer,
-        'Luftfoto': aerialLayer
-    };
+    var etape = [
+        new Etape1(),
+        new Etape2(),
+        new Etape3(),
+        new Etape4(),
+        new Etape5(),
+        new Etape6()
+    ];
 
     var overlays = {
-        "1. etape, Silkeborg-Varde, 180 km": new Etape1(),
-        "2. etape, Ribe–Sønderborg, 180 km": new Etape2(),
-        "3. etape, Sønderborg–Vejle, 200 km": new Etape3(),
-        "4. etape, Høng–Asnæs Indelukke, 105 km": new Etape4(),
-        "5. etape, Holbæk, 12,1 km enkeltstart": new Etape5(),
-        "6. etape, Roskilde–Frederiksberg, 165 km": new Etape6()
+        "1. etape, Silkeborg-Varde, 180 km": etape[0],
+        "2. etape, Ribe–Sønderborg, 180 km": etape[1],
+        "3. etape, Sønderborg–Vejle, 200 km": etape[2],
+        "4. etape, Høng–Asnæs Indelukke, 105 km": etape[3],
+        "5. etape, Holbæk, 12,1 km enkeltstart": etape[4],
+        "6. etape, Roskilde–Frederiksberg, 165 km": etape[5]
     };
 
     mapLayer.addTo(map);
 
     Object.keys(overlays).forEach(function (name) {
         map.addLayer(overlays[name]);
+    });
+
+    $('#layerSelect form input[name=baselayer]').change(function (evt) {
+        switch ($(evt.target).val()) {
+        case 'map':
+            map.addLayer(mapLayer);
+            map.removeLayer(aerialLayer);
+            break;
+        case 'aerial':
+            map.addLayer(aerialLayer);
+            map.removeLayer(mapLayer);
+            break;
+        default:
+            break;
+        }
+    });
+
+    $('#layerSelect ol a').click(function (evt) {
+        evt.preventDefault();
+        var index = $(evt.target).attr('data-etape') - 1;
+        map.fitBounds(etape[index].getBounds());
     });
 
 });

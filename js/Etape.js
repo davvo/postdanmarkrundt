@@ -17,6 +17,10 @@ define(function (require) {
 
 		initialize: function () {
 
+			this.bounds = new L.LatLngBounds();
+			this.bounds.extend(L.latLng(this.start.coordinates[1], this.start.coordinates[0]));
+			this.bounds.extend(L.latLng(this.stop.coordinates[1], this.stop.coordinates[0]));
+
 			var geojson = [];
 
 			geojson.push({

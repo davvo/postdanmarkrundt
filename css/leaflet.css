@@ -6,6 +6,7 @@
 }
 
 #map .leaflet-bar-part {
+	background: #fefefe;
 	background-color: rgba(255, 255, 255, 0.9);
 	border: none;
 }
@@ -62,6 +63,7 @@
 }
 
 #map .leaflet-control-attribution {
+	background: #fefefe;
 	background-color: rgba(255, 255, 255, 0.9);
 	box-shadow: none;
 }

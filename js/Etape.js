@@ -1,10 +1,11 @@
-/*global define, L */
+/*global define */
 
 define(function (require) {
 
 	"use strict";
 
-	var MarkerIcon = require('./MarkerIcon');
+	var L = require('lib/leaflet'),
+		MarkerIcon = require('./MarkerIcon');
 
 	function toLineString(coords) {
 		return coords.split(' ').map(function (coord) {

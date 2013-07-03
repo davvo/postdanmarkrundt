@@ -1,9 +1,11 @@
-/*global L, define */
+/*global define */
 
 
-define(function () {
+define(function (require) {
 
 	"use strict";
+
+	var L = require('lib/leaflet');
 
 	return L.Icon.extend({
 	    options: {

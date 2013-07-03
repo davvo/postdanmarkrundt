@@ -5,13 +5,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
 		<link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/leaflet.css" />
 		<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
 		<script data-main="js/main" src="js/lib/require.js"></script>
     </head>
     <body>
-    	<div id="header">
-    		<a class="krak-link" href="http://www.krak.dk"><img src="img/logotype-krak-2x.png"/></a>
-    		<a class="postdanmark-link" href="http://www.postdanmarkrundt.dk">Post Danmark Rundt 2013</a>
+    	<div id="layerSelect">
+            <h1>POST DANMARK RUNDT 2013</h1>
+            <ol>
+                <li><a data-etape="1">Silkeborg-Varde, 180 km</a></li>
+                <li><a data-etape="2">Ribe–Sønderborg, 180 km</a></li>
+                <li><a data-etape="3">Sønderborg–Vejle, 200 km</a></li>
+                <li><a data-etape="4">Høng–Asnæs Indelukke, 105 km</a></li>
+                <li><a data-etape="5">Holbæk, 12,1 km enkeltstart</a></li>
+                <li><a data-etape="6">Roskilde–Frederiksberg, 165 km</a></li>
+            </ol>
+            <form>
+                <input type="radio" name="baselayer" value="map" checked/>Kort
+                <br/>
+                <input type="radio" name="baselayer" value="aerial"/>Luftfoto
+            </form>
+            <a target="_blank" href="http://www.krak.dk"><img src="img/krak.png"/></a>
     	</div>
         <div id="map"></div>
     </body>

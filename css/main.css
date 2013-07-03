@@ -6,37 +6,46 @@ body {
 	padding: 0;
 }
 
-#header {
-	height: 70px;
-	line-height: 70px;
-	padding: 0 20px;
-	background: #c92127;
-	border-bottom: 1px solid #ae331f;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C12027',endColorstr='#C93C24');
-	background: -moz-linear-gradient(center top,#c12027,#c93c24);
-	background: -webkit-gradient(linear,0% 0,0% 100%,from(#c12027),to(#c93c24));
-	-webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.3);
-	box-shadow: 0 2px 2px rgba(0,0,0,0.3);	
-}
-
-#header img {
-	width: 103px;
-	height: 42px;
-	vertical-align: middle;
-}
-
-#header a.postdanmark-link {
-	color: white;
-	text-decoration: none;
-	font-size: 2em;
-	font-family: arial;
-	float:right;
-}
-
 #map {
 	position: absolute;
-	top: 70px;
+	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
 }
+
+#layerSelect {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background-color: white;
+	z-index: 10;
+	padding: 10px;
+}
+
+#layerSelect h1 {
+	font-family: arial;
+	font-size: 1em;
+	text-align: center;
+	font-style: italic;
+}
+
+#layerSelect a {
+	text-decoration: underline;
+	color: blue;
+	cursor: pointer;
+}
+
+#layerSelect form {
+	padding: 10px;
+	margin: -10px;
+	border-top: solid 1px #eee;
+	display: inline-block;
+}
+
+#layerSelect img {
+	width: 110px;
+	height: 50px;
+	float: right;
+}
+

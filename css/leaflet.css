@@ -1,12 +1,12 @@
 #map .leaflet-bar {
 	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	border: none;
-	-webkit-border-radius: 0;
-	border-radius: 0;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
 }
 
 #map .leaflet-bar-part {
-	background: #fefefe;
+	background-color: #fefefe;
 	background-color: rgba(255, 255, 255, 0.9);
 	border: none;
 }
@@ -50,6 +50,7 @@
 	width: 36px;
 	height: 36px;
 	color: #000;
+	background-color: rgba(255, 255, 255, 0.9);
 }
 
 #map .leaflet-control-zoom a:hover {
@@ -60,12 +61,6 @@
 #map .leaflet-control-zoom-in,
 #map .leaflet-control-zoom-out {
 	line-height: 36px;
-}
-
-#map .leaflet-control-attribution {
-	background: #fefefe;
-	background-color: rgba(255, 255, 255, 0.9);
-	box-shadow: none;
 }
 
 #map.leaflet-container a.leaflet-popup-close-button {

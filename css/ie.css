@@ -1,0 +1,11 @@
+#layerSelect {
+	border: 1px solid #999;
+}
+
+#map .leaflet-control-attribution {
+	border: 50px solid #999;
+}
+
+#map .leaflet-bar {
+	border: 1px solid #999;
+}

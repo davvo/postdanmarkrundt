@@ -24,10 +24,15 @@ define(function (require) {
 
         $ = require('lib/jquery');
 
+    var zoomLevel = 8;
+    if ($(window).width() < 590) {
+        zoomLevel = 6;
+    }
+
 	var map = L.map('map', {
 		attributionControl: false,
         zoomControl: false
-	}).setView([55.80475, 10.37197], 8);
+	}).setView([55.80475, 10.37197], zoomLevel);
 
     new L.Control.Zoom({
         'position': 'bottomleft'

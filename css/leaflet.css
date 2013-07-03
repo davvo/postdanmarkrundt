@@ -40,14 +40,15 @@
 }
 
 #map .leaflet-popup-content-wrapper {
-	-webkit-border-radius: 0;
-	border-radius: 0;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
 	padding: 1px;
 }
 
 #map .leaflet-control-zoom a {
 	width: 36px;
 	height: 36px;
+	color: #000;
 }
 
 #map .leaflet-control-zoom a:hover {
@@ -63,4 +64,8 @@
 #map .leaflet-control-attribution {
 	background-color: rgba(255, 255, 255, 0.9);
 	box-shadow: none;
+}
+
+#map.leaflet-container a.leaflet-popup-close-button {
+	color: #c3c3c3;
 }

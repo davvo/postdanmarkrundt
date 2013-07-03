@@ -27,7 +27,7 @@ define(function (require) {
 	var map = L.map('map', {
 		attributionControl: false,
         zoomControl: false
-	}).setView([56.10000, 10.35000], 7);
+	}).setView([55.80475, 10.37197], 8);
 
     new L.Control.Zoom({
         'position': 'bottomleft'

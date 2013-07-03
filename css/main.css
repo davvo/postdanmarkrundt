@@ -6,12 +6,33 @@ body {
 	padding: 0;
 }
 
+body {
+	font: normal 13px/1.5 normal Arial,sans-serif;
+}
+
 #map {
+	font: normal 13px/1.5 Arial,sans-serif;
 	position: absolute;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
+}
+
+#map a {
+	color: #20c;
+}
+
+#map a:hover {
+	color: #006bff;
+}
+
+#map a:active {
+	color: #20c;
+}
+
+#map a:visited {
+	color: #20c;
 }
 
 #layerSelect {
@@ -20,26 +41,31 @@ body {
 	right: 20px;
 	background-color: white;
 	z-index: 10;
-	padding: 10px;
+	padding: 0;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	border-radius: 2px;
 }
 
 #layerSelect h1 {
 	font-family: arial;
-	font-size: 1em;
-	text-align: center;
+	font-size: 1.2em;
 	font-style: italic;
+	padding: 0;
+	margin: 15px 15px 5px 15px;
 }
 
-#layerSelect a {
-	text-decoration: underline;
-	color: blue;
-	cursor: pointer;
+#layerSelect ol {
+	padding: 0;
+	margin: 0 0 15px 38px;
+}
+
+#layerSelect ol li {
+	margin-bottom: .5em;
 }
 
 #layerSelect form {
-	padding: 10px;
-	margin: -10px;
-	border-top: solid 1px #eee;
+	padding: 0;
+	margin: 10px 15px;
 	display: inline-block;
 }
 
@@ -47,5 +73,13 @@ body {
 	width: 110px;
 	height: 50px;
 	float: right;
+	margin: 3px 15px 5px 15px;
 }
 
+#layerSelect hr {
+	background-color: #eee;
+	height: 1px;
+	border: none;
+	margin: 0;
+	padding: 0;
+}

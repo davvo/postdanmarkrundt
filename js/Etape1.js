@@ -1,4 +1,4 @@
-/*global L, define */
+/*global define */
 
 define(function (require) {
 

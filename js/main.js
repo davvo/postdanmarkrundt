@@ -1,9 +1,12 @@
-/*global requirejs, define, L, window */
+/*global requirejs, define, window */
 
 requirejs.config({
     shim: {
         'lib/jquery': {
             exports: '$'
+        },
+        'lib/leaflet': {
+            exports: 'L'
         }
     }
 });
@@ -22,7 +25,8 @@ define(function (require) {
 		Etape5 = require('Etape5'),
 		Etape6 = require('Etape6'),
 
-        $ = require('lib/jquery');
+        $ = require('lib/jquery'),
+        L = require('lib/leaflet');
 
     var zoomLevel = 8;
     if ($(window).width() < 590) {

@@ -102,7 +102,27 @@ define(function (require) {
     $('#layerSelect ol a').click(function (evt) {
         evt.preventDefault();
         var index = $(evt.target).attr('data-etape') - 1;
-        map.fitBounds(etape[index].getBounds());
+        var layer = etape[index];
+
+        etape.forEach(function (etap) {
+            etap.setStyle(function () {
+                return {
+                    color: 'blue',
+                    weight: 5,
+                    opacity: 0.5
+                };
+            });
+        });
+
+        layer.setStyle(function () {
+            return {
+                color: '#3c008e',
+                weight: 7,
+                opacity: 0.6
+            };
+        });
+
+        map.fitBounds(layer.getBounds());
     });
 
 });

@@ -15,7 +15,7 @@ define(function (require) {
 		stop: {
 			coordinates: [8.48638, 55.62312],
 			popupContent: 'Mål Etape 1',
-			iconUrl: 'img/finish.png'
+			iconUrl: 'img/finish-1.png'
 		},
 
 		track: {

@@ -40,7 +40,7 @@ define(function (require) {
     };
 
     var mapLayer = L.tileLayer(url, L.Util.extend({
-        layer: 'map',
+        layer: 'map2x',
         ext: 'png',
         maxZoom: 17
     }, options));

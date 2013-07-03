@@ -7,9 +7,9 @@ define(function () {
 
 	return L.Icon.extend({
 	    options: {
-			iconSize:     [34, 42],
-			iconAnchor:   [3, 35],
-			popupAnchor:  [12, -37]
+			iconSize:     [51, 63],
+			iconAnchor:   [5, 52],
+			popupAnchor:  [18, -56]
 	    }
 	});
 

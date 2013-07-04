@@ -52,7 +52,7 @@ define(function (require) {
         layer: 'map2x',
         ext: 'png',
         maxZoom: 17
-    }, options));
+    }, options)).addTo(map);
 
     var aerialLayer = L.tileLayer(url, L.Util.extend({
         layer: 'aerial',
@@ -69,19 +69,8 @@ define(function (require) {
         new Etape6()
     ];
 
-    var overlays = {
-        "1. etape, Silkeborg-Varde, 180 km": etape[0],
-        "2. etape, Ribe–Sønderborg, 180 km": etape[1],
-        "3. etape, Sønderborg–Vejle, 200 km": etape[2],
-        "4. etape, Høng–Asnæs Indelukke, 105 km": etape[3],
-        "5. etape, Holbæk, 12,1 km enkeltstart": etape[4],
-        "6. etape, Roskilde–Frederiksberg, 165 km": etape[5]
-    };
-
-    mapLayer.addTo(map);
-
-    Object.keys(overlays).forEach(function (name) {
-        map.addLayer(overlays[name]);
+    etape.forEach(function (layer) {
+        map.addLayer(layer);
     });
 
     $('#layerSelect form input[name=baselayer]').change(function (evt) {

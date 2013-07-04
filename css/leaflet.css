@@ -46,6 +46,20 @@
 	padding: 1px;
 }
 
+#map .leaflet-bar a:first-child {
+	-webkit-border-top-left-radius: 2px;
+	border-top-left-radius: 2px;
+	-webkit-border-top-right-radius: 2px;
+	border-top-right-radius: 2px;
+}
+
+#map .leaflet-bar a:last-child {
+	-webkit-border-bottom-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	-webkit-border-bottom-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
 #map .leaflet-control-zoom a {
 	width: 36px;
 	height: 36px;

@@ -42,23 +42,44 @@ define(function (require) {
         'position': 'bottomleft'
     }).addTo(map);
 
-    var url = 'http://{s}.eniro.no/geowebcache/service/tms1.0.0/{layer}/{z}/{x}/{y}.{ext}';
+
+    function getTileVersion(type, callback) {
+        $.ajax({
+            url: 'http://map.krak.dk/api/tileversion',
+            data: {
+                format: 'json',
+                type: type
+            },
+            dataType: 'jsonp'
+        }).done(callback);
+    }
+
+    var url = 'http://{s}.eniro.no/geowebcache/service/tms1.0.0/{layer}/{z}/{x}/{y}.{ext}?v={tileVersion}';
     var options = {
         subdomains: ['map01', 'map02', 'map03', 'map04'],
-        tms: true
+        tms: true,
+        minZoom: 3
     };
 
-    var mapLayer = L.tileLayer(url, L.Util.extend({
-        layer: 'map2x',
-        ext: 'png',
-        maxZoom: 17
-    }, options)).addTo(map);
+    var mapLayer, aerialLayer;
 
-    var aerialLayer = L.tileLayer(url, L.Util.extend({
-        layer: 'aerial',
-        ext: 'jpeg',
-        maxZoom: 20
-    }, options));
+    getTileVersion('map', function (res) {
+        mapLayer = L.tileLayer(url, L.Util.extend({
+            layer: 'map2x',
+            ext: 'png',
+            maxZoom: 17,
+            tileVersion: res.tileVersion
+        }, options)).addTo(map);
+    });
+
+    getTileVersion('aerial', function (res) {
+        aerialLayer = L.tileLayer(url, L.Util.extend({
+            layer: 'aerial',
+            ext: 'jpeg',
+            maxZoom: 20,
+            tileVersion: res.tileVersion
+        }, options));
+    });
 
     var etape = [
         new Etape1(),

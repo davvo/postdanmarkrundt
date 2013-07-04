@@ -1,20 +1,18 @@
 postdanmarkrundt
 ================
 
-# install node dependencies (first time only)
-npm install
+Install node dependencies (first time only)
 
-# run jslint on javascript files
-make lint
+    npm install
 
-# build dist (minified javascript file)
-make build
+start webserver
 
-# start webserver on localhost:8080
-make run
+    make run
 
-http://localhost:8080
+Then point your browser to <code>http://localhost:8080</code>
+(or <code>http://localhost:8080/?debug</code> to get non-compressed javascript)
 
-or 
 
-http://localhost:8080?debug
+Before deploy, remember to build compressed version of javascripts:
+
+    make build

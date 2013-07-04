@@ -1,6 +1,7 @@
 /*global requirejs, define, window */
 
 requirejs.config({
+    baseUrl: 'js',
     shim: {
         'lib/jquery': {
             exports: '$'

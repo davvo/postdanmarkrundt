@@ -5,7 +5,8 @@ lint:
 build: lint
 	r.js -o baseUrl=js name=main out=js/main-built.js mainConfigFile=js/main.js
 
-run: node app.js
+run: lint
+	node app.js
 
 debug: lint
 	node --debug app.js

@@ -16,15 +16,15 @@ define(function (require) {
 
     "use strict";
 
-	require('lib/domReady');
-	require('lib/ddr-ecma5');
+    require('lib/domReady');
+    require('lib/ddr-ecma5');
 
-	var Etape1 = require('Etape1'),
-		Etape2 = require('Etape2'),
-		Etape3 = require('Etape3'),
-		Etape4 = require('Etape4'),
-		Etape5 = require('Etape5'),
-		Etape6 = require('Etape6'),
+    var Etape1 = require('Etape1'),
+        Etape2 = require('Etape2'),
+        Etape3 = require('Etape3'),
+        Etape4 = require('Etape4'),
+        Etape5 = require('Etape5'),
+        Etape6 = require('Etape6'),
 
         $ = require('lib/jquery'),
         L = require('lib/leaflet');
@@ -34,10 +34,10 @@ define(function (require) {
         zoomLevel = 6;
     }
 
-	var map = L.map('map', {
-		attributionControl: false,
+    var map = L.map('map', {
+        attributionControl: false,
         zoomControl: false
-	}).setView([55.80475, 10.37197], zoomLevel);
+    }).setView([55.80475, 10.37197], zoomLevel);
 
     new L.Control.Zoom({
         'position': 'bottomleft'

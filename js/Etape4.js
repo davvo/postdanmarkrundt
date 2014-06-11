@@ -23,7 +23,8 @@ define(function (require) {
             popupContent: '4. etape, Nyborg-Odense, 100 km'
         },
 
-        moreInfo: 'http://www.postdanmarkrundt.dk/index.php?p=menu/side.php&menu=31&side=170'
+        moreInfo: 'http://www.postdanmarkrundt.dk/index.php?p=menu/side.php&menu=31&side=170',
+        moreInfoMobile: "http://www.postdanmarkrundt.dk/m/index.php?p=menu/side.php&menu=31&side=170"
 
     });
 

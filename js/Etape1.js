@@ -23,7 +23,8 @@ define(function (require) {
             popupContent: '1. etape, Hobro-Mariager, 155 km'
         },
 
-        moreInfo: "http://www.postdanmarkrundt.dk/index.php?p=menu/side.php&menu=31&side=167"
+        moreInfo: "http://www.postdanmarkrundt.dk/index.php?p=menu/side.php&menu=31&side=167",
+        moreInfoMobile: "http://www.postdanmarkrundt.dk/m/index.php?p=menu/side.php&menu=31&side=167"
 
     });
 

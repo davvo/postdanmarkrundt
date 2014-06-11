@@ -1,4 +1,4 @@
-/*global define */
+/*global define, navigator */
 
 define(function (require) {
 
@@ -75,10 +75,33 @@ define(function (require) {
 
             var self = this;
 
+            var isMobile = {
+                Android: function () {
+                    return navigator.userAgent.match(/Android/i);
+                },
+                BlackBerry: function () {
+                    return navigator.userAgent.match(/BlackBerry/i);
+                },
+                iOS: function () {
+                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                },
+                Opera: function () {
+                    return navigator.userAgent.match(/Opera Mini/i);
+                },
+                Windows: function () {
+                    return navigator.userAgent.match(/IEMobile/i);
+                },
+                any: function () {
+                    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+                }
+            };
+
             var options = {
                 onEachFeature: function (feature, layer) {
                     var content = [feature.properties.popupContent];
-                    if (self.moreInfo) {
+                    if (self.moreInfoMobile && isMobile.any()) {
+                        content.push('<br/><a target="_blank" href="' + self.moreInfoMobile + '">Mere Information</a>');
+                    } else if (self.moreInfo) {
                         content.push('<br/><a target="_blank" href="' + self.moreInfo + '">Mere Information</a>');
                     }
                     layer.bindPopup(content.join(''));

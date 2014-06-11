@@ -23,7 +23,8 @@ define(function (require) {
             popupContent: '6. etape, Kalundborg–Frederiksberg, 175 km'
         },
 
-        moreInfo: 'http://www.postdanmarkrundt.dk/index.php?p=menu/side.php&menu=31&side=172'
+        moreInfo: 'http://www.postdanmarkrundt.dk/index.php?p=menu/side.php&menu=31&side=172',
+        moreInfoMobile: "http://www.postdanmarkrundt.dk/m/index.php?p=menu/side.php&menu=31&side=172"
 
     });
 

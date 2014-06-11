@@ -23,7 +23,8 @@ define(function (require) {
             popupContent: '5. etape, Middelfart, 15,1 km enkeltstart'
         },
 
-        moreInfo: 'http://www.postdanmarkrundt.dk/index.php?p=menu/side.php&menu=31&side=171'
+        moreInfo: 'http://www.postdanmarkrundt.dk/index.php?p=menu/side.php&menu=31&side=171',
+        moreInfoMobile: "http://www.postdanmarkrundt.dk/m/index.php?p=menu/side.php&menu=31&side=171"
 
     });
 

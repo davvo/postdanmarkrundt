@@ -23,7 +23,8 @@ define(function (require) {
             popupContent: '3. etape, Skanderborg–Vejle, 175 km'
         },
 
-        moreInfo: 'http://www.postdanmarkrundt.dk/index.php?p=menu/side.php&menu=31&side=169'
+        moreInfo: 'http://www.postdanmarkrundt.dk/index.php?p=menu/side.php&menu=31&side=169',
+        moreInfoMobile: "http://www.postdanmarkrundt.dk/m/index.php?p=menu/side.php&menu=31&side=169"
 
     });
 

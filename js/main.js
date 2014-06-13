@@ -1,4 +1,4 @@
-/*global requirejs, define, window */
+/*global requirejs, define, window, evt */
 
 requirejs.config({
     baseUrl: 'js',
@@ -110,9 +110,7 @@ define(function (require) {
         }
     });
 
-    $('#layerSelect ol a').click(function (evt) {
-        evt.preventDefault();
-        var index = $(evt.target).attr('data-etape') - 1;
+    function layerselecthandler(index) {
         var layer = etape[index];
 
         etape.forEach(function (etap) {
@@ -134,6 +132,18 @@ define(function (require) {
         });
 
         map.fitBounds(layer.getBounds());
+    }
+
+    $('#layerSelect ol a').click(function (evt) {
+        evt.preventDefault();
+        var index = $(evt.target).attr('data-etape') - 1;
+        layerselecthandler(index);
     });
 
+    $('#layerSelectSmall').change(function (evt) {
+        evt.preventDefault();
+        var index = evt.target.selectedIndex;
+        layerselecthandler(index);
+        evt.target.blur();
+    });
 });

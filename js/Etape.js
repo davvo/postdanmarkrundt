@@ -73,6 +73,19 @@ define(function (require) {
                 });
             }
 
+            if (this.warmup) {
+                geojson.push({
+                    'type': 'Feature',
+                    'properties': {
+                        'popupContent': this.warmup.popupContent
+                    },
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': toLineString(this.warmup.coordinates)
+                    }
+                });
+            }
+
             var self = this;
 
             var isMobile = {

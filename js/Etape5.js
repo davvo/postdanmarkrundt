@@ -13,7 +13,7 @@ define(function (require) {
         },
 
         stop: {
-            coordinates: [9.73616, 55.50506],
+            coordinates: [9.73623441, 55.50509378],
             popupContent: "Mål Etape 5",
             iconUrl: 'img/finish-5.png'
         },

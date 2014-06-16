@@ -111,6 +111,10 @@ define(function (require) {
     });
 
     function layerselecthandler(index) {
+        if (index < 0 || index > 5) {
+            return;
+        }
+
         var layer = etape[index];
 
         etape.forEach(function (etap) {
@@ -142,7 +146,7 @@ define(function (require) {
 
     $('#layerSelectSmall').change(function (evt) {
         evt.preventDefault();
-        var index = evt.target.selectedIndex;
+        var index = evt.target.selectedIndex - 1;
         layerselecthandler(index);
         evt.target.blur();
     });

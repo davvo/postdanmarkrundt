@@ -25,9 +25,12 @@ define(function (require) {
         Etape4 = require('Etape4'),
         Etape5 = require('Etape5'),
         Etape6 = require('Etape6'),
+        Xgemius = require('stats/xgemius'),
 
         $ = require('lib/jquery'),
         L = require('lib/leaflet');
+
+    var xgemius;
 
     var zoomLevel = 8;
     if ($(window).width() < 590) {
@@ -43,6 +46,12 @@ define(function (require) {
         'position': 'bottomleft'
     }).addTo(map);
 
+    xgemius = new Xgemius(map, {
+        page: {
+            defaultEvent: 'd7BAUssSa5B518PBxN7biIYg.u2RWAcRLNdVCFiPdDT.H7'
+        }
+    });
+    console.log('Gemius: ' + xgemius);
 
     function getTileVersion(type, callback) {
         $.ajax({
@@ -145,5 +154,9 @@ define(function (require) {
         var index = evt.target.selectedIndex;
         layerselecthandler(index);
         evt.target.blur();
+    });
+
+    map.fire('ready', {
+        'layer': 'map'
     });
 });

@@ -46,12 +46,13 @@ define(function (require) {
         'position': 'bottomleft'
     }).addTo(map);
 
-    xgemius = new Xgemius(map, {
-        page: {
-            defaultEvent: 'd7BAUssSa5B518PBxN7biIYg.u2RWAcRLNdVCFiPdDT.H7'
-        }
-    });
-    console.log('Gemius: ' + xgemius);
+    if (!xgemius) {
+        xgemius = new Xgemius(map, {
+            page: {
+                defaultEvent: 'd7BAUssSa5B518PBxN7biIYg.u2RWAcRLNdVCFiPdDT.H7'
+            }
+        });
+    }
 
     function getTileVersion(type, callback) {
         $.ajax({

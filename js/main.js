@@ -49,7 +49,8 @@ define(function (require) {
     if (!xgemius) {
         xgemius = new Xgemius(map, {
             page: {
-                defaultEvent: 'd7BAUssSa5B518PBxN7biIYg.u2RWAcRLNdVCFiPdDT.H7'
+                // defaultEvent: 'd7BAUssSa5B518PBxN7biIYg.u2RWAcRLNdVCFiPdDT.H7' // new, not yet in use
+                defaultEvent: 'zUnlnyMCESpEbYdDrF1V.LPozZC_Z8MoKKKoaTM_4yb.67' // same as current krak
             }
         });
     }
